@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iData Solutions — Softwareontwikkeling uit Nederland</title>
+<meta name="description" content="iData Solutions ontwikkelt webapplicaties en mobiele apps voor onderwijsinstellingen en organisaties. Maker van MijnLVS.">
+<link rel="canonical" href="https://idatasolutions.nl/">
+<meta property="og:title" content="iData Solutions">
+<meta property="og:description" content="Softwareontwikkeling voor onderwijsinstellingen en organisaties.">
+<meta property="og:url" content="https://idatasolutions.nl/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b3d91'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='system-ui,sans-serif' font-weight='700' fill='white'>i</text></svg>">
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f7fa; --fg:#12181f; --muted:#5a6673;
+    --brand:#0b3d91; --brand-soft:#e8eefb; --line:#e3e8ef; --card:#ffffff;
+    --shadow:0 1px 2px rgba(16,24,40,.05), 0 8px 24px rgba(16,24,40,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d1117; --bg-alt:#141b24; --fg:#e8edf3; --muted:#9aa7b5;
+      --brand:#6ea8ff; --brand-soft:#16233a; --line:#242e3a; --card:#131a23;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:0 24px}
+  a{color:var(--brand)}
+
+  header{border-bottom:1px solid var(--line); background:var(--bg); position:sticky; top:0; z-index:10}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; flex-wrap:wrap}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-.02em; font-size:19px; text-decoration:none; color:var(--fg)}
+  .logo .mark{width:30px; height:30px; border-radius:8px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:18px; font-weight:800}
+  @media (prefers-color-scheme: dark){ .logo .mark{color:#0d1117} }
+  .nav nav{display:flex; gap:22px; font-size:15px}
+  .nav nav a{color:var(--muted); text-decoration:none}
+  .nav nav a:hover{color:var(--fg)}
+
+  .hero{padding:76px 0 60px}
+  .hero h1{font-size:clamp(30px,5.2vw,46px); line-height:1.15; letter-spacing:-.03em; margin:0 0 18px; max-width:16ch}
+  .hero p{font-size:clamp(17px,2.2vw,20px); color:var(--muted); max-width:60ch; margin:0 0 28px}
+  .cta{display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:600; padding:12px 22px; border-radius:9px; font-size:16px}
+  @media (prefers-color-scheme: dark){ .cta{color:#0d1117} }
+  .cta.ghost{background:transparent; color:var(--brand); border:1px solid var(--line); margin-left:8px}
+
+  section{padding:56px 0; border-top:1px solid var(--line)}
+  h2{font-size:clamp(22px,3.2vw,28px); letter-spacing:-.02em; margin:0 0 10px}
+  .lead{color:var(--muted); max-width:65ch; margin:0 0 32px}
+
+  .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:var(--shadow)}
+  .card h3{margin:0 0 8px; font-size:18px; letter-spacing:-.01em}
+  .card p{margin:0; color:var(--muted); font-size:15.5px}
+  .card .ico{width:34px; height:34px; border-radius:9px; background:var(--brand-soft); color:var(--brand); display:grid; place-items:center; margin-bottom:14px; font-size:17px}
+
+  .product{background:var(--bg-alt)}
+  .product .inner{display:grid; gap:28px; grid-template-columns:1fr; align-items:center}
+  @media(min-width:760px){ .product .inner{grid-template-columns:1.1fr .9fr} }
+  .badge{display:inline-block; font-size:13px; font-weight:600; color:var(--brand); background:var(--brand-soft); padding:4px 11px; border-radius:99px; margin-bottom:14px}
+  .screen{background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); overflow:hidden}
+  .screen .bar{display:flex; gap:6px; padding:11px 14px; border-bottom:1px solid var(--line); background:var(--bg-alt)}
+  .screen .bar i{width:10px; height:10px; border-radius:50%; background:var(--line)}
+  .screen .body{padding:18px}
+  .row{height:9px; border-radius:5px; background:var(--line); margin-bottom:11px}
+  .row.w70{width:70%} .row.w45{width:45%} .row.w85{width:85%}
+  .row.accent{background:var(--brand); opacity:.75; width:35%}
+
+  dl.info{display:grid; grid-template-columns:auto 1fr; gap:10px 22px; margin:0; font-size:15.5px}
+  dl.info dt{color:var(--muted)}
+  dl.info dd{margin:0; font-weight:500}
+
+  footer{border-top:1px solid var(--line); padding:34px 0 46px; color:var(--muted); font-size:14.5px}
+  footer .cols{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap}
+  footer strong{color:var(--fg)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><span class="mark">i</span> iData Solutions</a>
+    <nav>
+      <a href="#diensten">Diensten</a>
+      <a href="#mijnlvs">MijnLVS</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <h1>Software die het werk écht lichter maakt.</h1>
+    <p>iData Solutions ontwikkelt webapplicaties en mobiele apps voor onderwijsinstellingen en maatschappelijke organisaties in Nederland. Van administratie tot ouderportaal — praktisch gebouwd, en gemaakt om dagelijks gebruikt te worden.</p>
+    <a class="cta" href="#contact">Neem contact op</a>
+    <a class="cta ghost" href="#mijnlvs">Bekijk MijnLVS</a>
+  </div>
+
+  <section id="diensten">
+    <div class="wrap">
+      <h2>Wat we doen</h2>
+      <p class="lead">Eén aanspreekpunt, van eerste schets tot beheer na oplevering.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="ico">◧</div>
+          <h3>Webapplicaties</h3>
+          <p>Beveiligde portalen en administratiesystemen op maat, gebouwd voor dagelijks gebruik door medewerkers, docenten en ouders.</p>
+        </div>
+        <div class="card">
+          <div class="ico">▤</div>
+          <h3>Mobiele apps</h3>
+          <p>Native apps voor iOS en Android, inclusief begeleiding bij publicatie in de App Store en Google Play.</p>
+        </div>
+        <div class="card">
+          <div class="ico">◈</div>
+          <h3>Maatwerk &amp; integraties</h3>
+          <p>Koppelingen met bestaande systemen, betaalproviders en e-mail, zodat processen op één plek samenkomen.</p>
+        </div>
+        <div class="card">
+          <div class="ico">◇</div>
+          <h3>Hosting &amp; onderhoud</h3>
+          <p>Beheer, updates en support na livegang. Gegevens worden binnen de EU verwerkt, conform de AVG.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mijnlvs" class="product">
+    <div class="wrap inner">
+      <div>
+        <span class="badge">Eigen product</span>
+        <h2>MijnLVS — leerlingvolgsysteem</h2>
+        <p class="lead">Een compleet leerlingvolgsysteem voor onderwijsinstellingen: leerlingadministratie, aanwezigheid, cijfers, klassen en een portaal voor ouders. Beschikbaar via de browser en als mobiele app.</p>
+        <a class="cta" href="https://www.mijnlvs.nl" rel="noopener">Naar mijnlvs.nl</a>
+      </div>
+      <div class="screen" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="row accent"></div>
+          <div class="row w85"></div>
+          <div class="row w70"></div>
+          <div class="row w45"></div>
+          <div class="row w70"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Vraag over een project of over MijnLVS? Stuur gerust een bericht — meestal volgt binnen één werkdag een reactie.</p>
+      <dl class="info">
+        <dt>Bedrijf</dt><dd>iData Solutions</dd>
+        <dt>E-mail</dt><dd><a href="mailto:info@idatasolutions.nl">info@idatasolutions.nl</a></dd>
+        <dt>Vestiging</dt><dd>PLAATSNAAM, Nederland</dd>
+        <dt>KVK-nummer</dt><dd>KVKNUMMER</dd>
+        <dt>Btw-id</dt><dd>BTWID</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div><strong>iData Solutions</strong> — softwareontwikkeling, Nederland</div>
+    <div>KVK KVKNUMMER · <a href="mailto:info@idatasolutions.nl">info@idatasolutions.nl</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
