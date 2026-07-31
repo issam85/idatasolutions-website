@@ -3,14 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iData Solutions — Softwareontwikkeling uit Nederland</title>
-<meta name="description" content="iData Solutions ontwikkelt webapplicaties en mobiele apps voor onderwijsinstellingen en organisaties. Maker van MijnLVS.">
+<title>iData Solutions | Software op maat en koppelingen</title>
+<meta name="description" content="iData Solutions bouwt software op maat: webapplicaties, mobiele apps en koppelingen tussen systemen. Maker van MijnLVS.">
 <link rel="canonical" href="https://idatasolutions.nl/">
 <meta property="og:title" content="iData Solutions">
-<meta property="og:description" content="Softwareontwikkeling voor onderwijsinstellingen en organisaties.">
+<meta property="og:description" content="Software op maat, mobiele apps en koppelingen tussen systemen. Sneller opgeleverd door AI-engineering.">
 <meta property="og:url" content="https://idatasolutions.nl/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "iData Solutions",
+  "url": "https://idatasolutions.nl",
+  "email": "i.abdellaoui@gmail.com",
+  "founder": {"@type": "Person", "name": "Issam El-Abdellaoui"},
+  "address": {"@type": "PostalAddress", "addressLocality": "Vlaardingen", "addressCountry": "NL"},
+  "identifier": {"@type": "PropertyValue", "name": "KVK", "value": "42003397"},
+  "description": "Softwareontwikkeling op maat: webapplicaties, mobiele apps en koppelingen tussen systemen."
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b3d91'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='system-ui,sans-serif' font-weight='700' fill='white'>i</text></svg>">
 <style>
   :root{
@@ -63,17 +76,18 @@
   .card .ico{width:38px; height:38px; border-radius:11px; background:var(--brand-soft); color:var(--brand); display:grid; place-items:center; margin-bottom:15px; flex:none}
   .card .ico svg{width:21px; height:21px; display:block}
 
+  .steps{counter-reset:s; list-style:none; margin:0; padding:0; display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .steps li{counter-increment:s; padding-left:44px; position:relative}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:1px; width:30px; height:30px; border-radius:50%; background:var(--brand-soft); color:var(--brand); display:grid; place-items:center; font-weight:700; font-size:14px}
+  .steps h3{margin:3px 0 5px; font-size:16.5px; letter-spacing:-.01em}
+  .steps p{margin:0; color:var(--muted); font-size:15px}
+
   .product{background:var(--bg-alt)}
-  .product .inner{display:grid; gap:28px; grid-template-columns:1fr; align-items:center}
-  @media(min-width:760px){ .product .inner{grid-template-columns:1.1fr .9fr} }
-  .badge{display:inline-block; font-size:13px; font-weight:600; color:var(--brand); background:var(--brand-soft); padding:4px 11px; border-radius:99px; margin-bottom:14px}
-  .screen{background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); overflow:hidden}
-  .screen .bar{display:flex; gap:6px; padding:11px 14px; border-bottom:1px solid var(--line); background:var(--bg-alt)}
-  .screen .bar i{width:10px; height:10px; border-radius:50%; background:var(--line)}
-  .screen .body{padding:18px}
-  .row{height:9px; border-radius:5px; background:var(--line); margin-bottom:11px}
-  .row.w70{width:70%} .row.w45{width:45%} .row.w85{width:85%}
-  .row.accent{background:var(--brand); opacity:.75; width:35%}
+  .proj{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:var(--shadow)}
+  .proj h3{margin:0 0 9px; font-size:19px; letter-spacing:-.01em}
+  .proj p{margin:0 0 14px; color:var(--muted); font-size:15.5px}
+  .proj a{font-weight:600; font-size:15.5px; text-decoration:none}
+  .proj a:hover{text-decoration:underline}
 
   dl.info{display:grid; grid-template-columns:auto 1fr; gap:10px 22px; margin:0; font-size:15.5px}
   dl.info dt{color:var(--muted)}
@@ -104,8 +118,7 @@
     .card .ico svg{width:19px; height:19px}
     .card h3{align-self:center; margin-bottom:5px; font-size:17px}
     .card p{font-size:15px}
-    .product .inner{gap:22px}
-    .screen{display:none}
+    .proj{padding:20px; border-radius:12px}
     dl.info{grid-template-columns:1fr; gap:0}
     dl.info dt{font-size:14px; margin-top:14px}
     dl.info dt:first-child{margin-top:0}
@@ -121,7 +134,8 @@
     <a class="logo" href="/"><span class="mark">i</span> iData Solutions</a>
     <nav>
       <a href="#diensten">Diensten</a>
-      <a href="#mijnlvs">MijnLVS</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#projecten">Projecten</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -129,59 +143,87 @@
 
 <main>
   <div class="wrap hero">
-    <h1>Software die het werk écht lichter maakt.</h1>
-    <p>iData Solutions ontwikkelt webapplicaties en mobiele apps voor onderwijsinstellingen en maatschappelijke organisaties in Nederland. Van administratie tot ouderportaal — praktisch gebouwd, en gemaakt om dagelijks gebruikt te worden.</p>
+    <h1>Software op maat, sneller en voor minder geld</h1>
+    <p>iData Solutions bouwt webapplicaties, mobiele apps en koppelingen tussen systemen, voor organisaties die iets nodig hebben wat standaardpakketten niet bieden. Door AI in te zetten bij het ontwerpen, bouwen en testen gaat dat een stuk sneller, en dat scheelt in de prijs.</p>
     <div class="actions">
       <a class="cta" href="#contact">Neem contact op</a>
-      <a class="cta ghost" href="#mijnlvs">Bekijk MijnLVS</a>
+      <a class="cta ghost" href="#projecten">Bekijk projecten</a>
     </div>
   </div>
 
   <section id="diensten">
     <div class="wrap">
       <h2>Wat we doen</h2>
-      <p class="lead">Eén aanspreekpunt, van eerste schets tot beheer na oplevering.</p>
+      <p class="lead">Eén aanspreekpunt, van het eerste gesprek tot het onderhoud na oplevering.</p>
       <div class="grid">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5a4.5 4.5 0 0 0 6.4 0l2.1-2.1a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M13.5 10.5a4.5 4.5 0 0 0-6.4 0L5 12.6a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg></div>
+          <h3>Maatwerk en koppelingen</h3>
+          <p>Software die om jouw werkwijze heen wordt gebouwd, met verbinding naar bestaande systemen, betaalproviders en e-mail.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M10 3v2.5M14 3v2.5M10 18.5V21M14 18.5V21M3 10h2.5M3 14h2.5M18.5 10H21M18.5 14H21"/></svg></div>
+          <h3>AI-engineering</h3>
+          <p>Ontwerpen, bouwen en testen gebeurt met AI-tooling. Dat scheelt weken werk, en die winst zit in de prijs.</p>
+        </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M6.5 6.5h.01M9.5 6.5h.01"/></svg></div>
           <h3>Webapplicaties</h3>
-          <p>Beveiligde portalen en administratiesystemen op maat, gebouwd voor dagelijks gebruik door medewerkers, docenten en ouders.</p>
+          <p>Beveiligde portalen en administratiesystemen, voor medewerkers, klanten of leden.</p>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></div>
           <h3>Mobiele apps</h3>
-          <p>Apps voor iOS en Android, inclusief begeleiding bij publicatie in de App Store en Google Play.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5a4.5 4.5 0 0 0 6.4 0l2.1-2.1a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M13.5 10.5a4.5 4.5 0 0 0-6.4 0L5 12.6a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg></div>
-          <h3>Maatwerk &amp; integraties</h3>
-          <p>Koppelingen met bestaande systemen, betaalproviders en e-mail, zodat processen op één plek samenkomen.</p>
+          <p>Apps voor iOS en Android, inclusief het regelen van de publicatie in de App Store en Google Play.</p>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.6c0 4.2-3.1 7.4-7.5 8.4-4.4-1-7.5-4.2-7.5-8.4V6z"/><path d="M9.2 12.1l2 2 3.6-3.8"/></svg></div>
-          <h3>Hosting &amp; onderhoud</h3>
-          <p>Beheer, updates en support na livegang, zodat een opgeleverd systeem ook op lange termijn blijft werken.</p>
+          <h3>Hosting en onderhoud</h3>
+          <p>Beheer, updates en support na oplevering, zodat het ook over een paar jaar nog werkt.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="mijnlvs" class="product">
-    <div class="wrap inner">
-      <div>
-        <span class="badge">Eigen product</span>
-        <h2>MijnLVS — leerlingvolgsysteem</h2>
-        <p class="lead">Een compleet leerlingvolgsysteem voor onderwijsinstellingen: leerlingadministratie, aanwezigheid, cijfers, klassen en een portaal voor ouders. Beschikbaar via de browser en als mobiele app.</p>
-        <a class="cta" href="https://www.mijnlvs.nl" rel="noopener">Naar mijnlvs.nl</a>
-      </div>
-      <div class="screen" aria-hidden="true">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="body">
-          <div class="row accent"></div>
-          <div class="row w85"></div>
-          <div class="row w70"></div>
-          <div class="row w45"></div>
-          <div class="row w70"></div>
+  <section id="werkwijze">
+    <div class="wrap">
+      <h2>Werkwijze</h2>
+      <p class="lead">Geen offertetraject van weken. Meestal ligt er binnen een paar dagen een voorstel.</p>
+      <ol class="steps">
+        <li>
+          <h3>Kennismaking</h3>
+          <p>Een gesprek over wat er nu misgaat en wat het moet worden.</p>
+        </li>
+        <li>
+          <h3>Voorstel met prijs</h3>
+          <p>Een concreet voorstel met prijs en opleverdatum, voordat er iets gebouwd wordt.</p>
+        </li>
+        <li>
+          <h3>Bouwen in korte rondes</h3>
+          <p>Regelmatig iets werkends om te bekijken, zodat bijsturen weinig kost.</p>
+        </li>
+        <li>
+          <h3>Oplevering en beheer</h3>
+          <p>Na livegang blijven updates en support doorlopen, met een vast aanspreekpunt.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projecten" class="product">
+    <div class="wrap">
+      <h2>Voorbeeldprojecten</h2>
+      <p class="lead">Twee systemen die live staan en dagelijks gebruikt worden.</p>
+      <div class="grid">
+        <div class="proj">
+          <h3>MijnLVS</h3>
+          <p>Leerlingvolgsysteem voor onderwijsinstellingen: leerlingadministratie, aanwezigheid, cijfers, klassen en een portaal voor ouders. Te gebruiken in de browser en als app op de telefoon.</p>
+          <a href="https://www.mijnlvs.nl" rel="noopener">mijnlvs.nl</a>
+        </div>
+        <div class="proj">
+          <h3>Al-Hijra</h3>
+          <p>Website en ledenportaal voor een moskee: online lid worden, donaties, gebedstijden en aanmelden voor onderwijs, met een beheeromgeving voor het bestuur.</p>
+          <a href="https://al-hijra.nl" rel="noopener">al-hijra.nl</a>
         </div>
       </div>
     </div>
@@ -190,7 +232,7 @@
   <section id="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <p class="lead">Vraag over een project of over MijnLVS? Stuur gerust een bericht — meestal volgt binnen één werkdag een reactie.</p>
+      <p class="lead">Vraag over een project of over MijnLVS? Stuur een bericht, meestal is er binnen een werkdag antwoord.</p>
       <dl class="info">
         <dt>Bedrijf</dt><dd>iData Solutions</dd>
         <dt>E-mail</dt><dd><a href="mailto:i.abdellaoui@gmail.com">i.abdellaoui@gmail.com</a></dd>
@@ -203,7 +245,7 @@
 
 <footer>
   <div class="wrap cols">
-    <div><strong>iData Solutions</strong> — softwareontwikkeling, Nederland</div>
+    <div><strong>iData Solutions</strong>, softwareontwikkeling uit Vlaardingen</div>
     <div>KVK 42003397 · <a href="mailto:i.abdellaoui@gmail.com">i.abdellaoui@gmail.com</a></div>
   </div>
 </footer>
