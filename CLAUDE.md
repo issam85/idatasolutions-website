@@ -22,9 +22,10 @@ Domein staat bij TransIP, DNS wijst naar GitHub:
 - `@`: 4x A (185.199.108-111.153) en 4x AAAA (2606:50c0:8000-8003::153)
 - `www`: CNAME naar `issam85.github.io.`
 
-Mail loopt **niet** over dit domein. Het MX-record wijst naar `@` en dus naar GitHub,
-dat geen mailserver draait. Daarom staat i.abdellaoui@gmail.com op de site als
-contactadres. Wil je ooit info@idatasolutions.nl, wijzig dan eerst het MX-record.
+Mail loopt via een **e-mailpakket van TransIP** (mailbox info@idatasolutions.nl,
+aangemaakt 31-07-2026). TransIP beheert de MX-records. Pas die niet met de hand aan,
+en laat bij elke wijziging in de zone de vier A-records, vier AAAA-records en de
+`www`-CNAME met rust: die houden de site in de lucht.
 
 ### Als het HTTPS-certificaat blijft hangen
 
